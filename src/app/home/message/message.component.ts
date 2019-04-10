@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { message } from './shared/message.model';
+import { Message } from './shared/message.model';
+import { MessageService } from './shared/message.service';
 
 @Component({
   selector: 'app-message',
@@ -7,33 +8,28 @@ import { message } from './shared/message.model';
   styleUrls: ['./message.component.scss'],
 })
 export class MessageComponent implements OnInit {
-  items:message[]=[];
-  constructor() { }
+  items: Message[] = [];
+  constructor(private messageService: MessageService) { }
 
   ngOnInit() {
+    this.messageService.loadMessages().subscribe(ms => {
+      this.items = ms;
+    })
+  }
+  onClick() {
 
-    var a=1;
-    console.log("666")
   }
-  onClick(){
-    
-  }
-  myHeaderFn(record, recordIndex, records) {
-    if (recordIndex % 20 === 0) {
-      return 'Header ' + recordIndex;
-    }
-    return null;
+  yy(){
+    console.log("mousedown")
   }
   loadData(event) {
     setTimeout(() => {
-      console.log('Done');
-      
-   
+      this.messageService.loadMessages().subscribe(ms => {
+        ms.forEach(m => {
+          this.items.push(m);
+        })
+      })
       event.target.complete();
-     
-      // App logic to determine if all data is loaded
-      // and disable the infinite scroll
-   
     }, 500);
   }
 }

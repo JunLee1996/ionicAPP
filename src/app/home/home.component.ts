@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
   slideOpts = {
     effect: 'flip',
+    zoom:false,
     touchReleaseOnEdges: true,
   };
 
@@ -42,9 +43,10 @@ export class HomeComponent implements OnInit {
   //  this.tt()
   // }
 
-  yy() {
-    console.log("yy");
+  onIonSlideDoubleTap(){
+    return false;
   }
+ 
   onIonSlideTouchEnd(value) {
     let transform = document.getElementsByClassName('swiper-wrapper')[0].getAttribute('style');
     let start = transform.indexOf('translate3d') + 12;

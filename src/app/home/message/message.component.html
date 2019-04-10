@@ -1,11 +1,11 @@
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let item of items" color="" (click)="onClick(item)">
-      <ion-avatar slot="start">
-        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-      </ion-avatar>
+    <ion-item *ngFor="let item of items" color="" (click)="onClick(item)" button=true (mousedown)="yy()">
+        <ion-avatar class="image" style="border-radius: 8%;" slot="start">
+        <img  src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
       <ion-label>
-        <div style="float: left; width:83%; color: #498af6;"><p style="font-size: large">1222</p><p style="font-size: 14px; color: #b7b9bb;">6666</p></div>
+        <div style="float: left; width:83%; color: #498af6;"><p style="font-size: 21px">1222</p><p style="font-size: 14px; color: #b7b9bb;">6666</p></div>
         <div style="float: right; width:15%;  font-size: 12px;color: #b7b9bb;">4月3日</div><br>
     
       </ion-label>

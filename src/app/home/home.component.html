@@ -14,7 +14,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
- <ion-slides style="height:100%;width:100%" [options]="slideOpts"  (ionSlideDrag)="onionSlideDrag()" (ionSlideTouchEnd)="onIonSlideTouchEnd()" >
+ <ion-slides style="height:100%;width:100%" [options]="slideOpts"  (ionSlideDrag)="onionSlideDrag()" (ionSlideTouchEnd)="onIonSlideTouchEnd()" (ionSlideDoubleTap)="onIonSlideDoubleTap()" >
     <ion-slide>
       <router-outlet  name="message"></router-outlet>
     </ion-slide>
