@@ -1,0 +1,18 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "demo.keystore",
+            "storePassword": "lijunapp",
+            "alias": "hello.jks",
+            "password" : "lijunapp",
+            "keystoreType": ""
+        },
+        "release": {
+            "keystore": "demo.keystore",
+            "storePassword": "lijunapp",
+            "alias": "hello.jks",
+            "password" : "lijunapp",
+            "keystoreType": ""
+        }
+    }
+}

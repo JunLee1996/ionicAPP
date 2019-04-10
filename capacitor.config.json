@@ -1,0 +1,6 @@
+{
+  "appId": "com.haoHan.lijun",
+  "appName": "MyApptest",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}

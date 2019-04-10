@@ -1,0 +1,38 @@
+ion-toolbar{
+    text-align: center
+}
+h1{
+    text-align: center
+}
+img{
+    text-align: center
+}
+div{
+    text-align: -webkit-center
+}
+ion-footer{
+    position: static;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+span>span{
+    font-size: 14px;
+    font-weight: 100;
+    opacity:0.5;
+}
+ion-button{
+    margin-top: 15%
+}
+a{
+    margin-left: 2%;
+    margin-right: 2%;
+    font-size: 12px;
+    font-weight: 200;
+}
+a:link { 
+    text-decoration:none;
+}
+a:hover { 
+    opacity:0.5; text-decoration:none;
+} 

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      登录
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Login </h1>
+  <div>
+    <ion-avatar>
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+  </div>
+  <ion-item>
+    <ion-label>用户名</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>密码&emsp;</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="onLogin()"> 登录</ion-button>
+</ion-content>
+<ion-footer>
+  <span><a href="http://www.baidu.com">找回密码</a><span>|</span>
+    <a href="http://www.baidu.com">紧急冻结</a><span>|</span>
+    <a href="http://www.baidu.com">更多</a>
+  </span>
+</ion-footer>
