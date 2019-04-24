@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
   slideOpts = {
     effect: 'flip',
-    zoom:false,
+    zoom: false,
     touchReleaseOnEdges: true,
   };
 
@@ -43,10 +43,35 @@ export class HomeComponent implements OnInit {
   //  this.tt()
   // }
 
-  onIonSlideDoubleTap(){
+  onIonSlideDoubleTap() {
     return false;
   }
- 
+  onIonSlideTransitionEnd() {
+    if (document.getElementsByClassName('swiper-wrapper')[0]) {
+      let transform = document.getElementsByClassName('swiper-wrapper')[0].getAttribute('style');
+      let start = transform.indexOf('translate3d') + 12;
+      let end = transform.indexOf(',') - 2;
+      let slideValue = transform.substring(start, end)
+      let style = document.getElementsByClassName('swiper-slide')[0].getAttribute('style')
+      let width = style.substring(style.indexOf('width') + 7, style.indexOf('px'));
+      let index = Math.abs(+slideValue) / (+width);
+      index = parseInt(index + '');
+      let degree = parseInt(Math.abs(+slideValue) % (+width) + '')
+      let current = 0;
+      let next = 0;
+      if (index < Math.abs(+slideValue) / (+width)) {
+        current = index;
+        next = index + 1;
+      } else if (index > Math.abs(+slideValue) / (+width)) {
+        current = index;
+        next = index - 1;
+      } else {
+        return
+      }
+      document.getElementsByTagName('ion-tab-button')[current].style.color = '#666666'
+      document.getElementsByTagName('ion-tab-button')[next].style.color = '#4185fa'
+    }
+  }
   onIonSlideTouchEnd(value) {
     let transform = document.getElementsByClassName('swiper-wrapper')[0].getAttribute('style');
     let start = transform.indexOf('translate3d') + 12;
@@ -95,7 +120,6 @@ export class HomeComponent implements OnInit {
     // setTimeout((index, color) => {
     //   document.getElementsByTagName('ion-tab-button')[index].style.color = color
     // }, 100)
-
   }
   RecursiveAssignment(p1, p2, p3) {
     if (p3 < 100) {

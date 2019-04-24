@@ -8,7 +8,6 @@ import { MeComponent } from './me/me.component';
 import { MessageComponent } from './message/message.component';
 import { AddressBookComponent } from './address-book/address-book.component';
 import { FindComponent } from './find/find.component';
-
 @NgModule({
   declarations: [HomeComponent,MeComponent,MessageComponent,AddressBookComponent,FindComponent],
   imports: [

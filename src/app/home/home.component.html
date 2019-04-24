@@ -1,51 +1,68 @@
-<ion-header class="head" >
-  <ion-toolbar class="toolbarBorder" color="light">
+<ion-header class="head">
+  <ion-toolbar class="toolbarBorder">
     <ion-buttons slot="secondary">
       <ion-button>
-        <ion-icon slot="icon-only" name="search"></ion-icon>
+        <ion-icon slot="icon-only"
+                  name="search"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-buttons slot="primary">
       <ion-button color="secondary">
-        <ion-icon slot="icon-only" name="more"></ion-icon>
+        <ion-icon slot="icon-only"
+                  name="more"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-title>Default Buttons</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
- <ion-slides style="height:100%;width:100%" [options]="slideOpts"  (ionSlideDrag)="onionSlideDrag()" (ionSlideTouchEnd)="onIonSlideTouchEnd()" (ionSlideDoubleTap)="onIonSlideDoubleTap()" >
+  <ion-slides style="height:100%;width:100%"
+              [options]="slideOpts"
+              (ionSlideDrag)="onionSlideDrag()"
+              (ionSlideTouchEnd)="onIonSlideTouchEnd()"
+              (ionSlideDoubleTap)="onIonSlideDoubleTap()"
+              (ionSlideTransitionEnd)="onIonSlideTransitionEnd()">
     <ion-slide>
-      <router-outlet  name="message"></router-outlet>
+      <router-outlet name="message"></router-outlet>
     </ion-slide>
-    <ion-slide style="background:maroon">
-      <div ><router-outlet #addressbook name="addressbook" ></router-outlet></div>
+    <ion-slide>
+        <router-outlet name="addressbook"></router-outlet>
     </ion-slide>
-    <ion-slide  style="background:lime">
-      <div><router-outlet name="find"></router-outlet></div>
+    <ion-slide style="background:lime">
+      <div>
+        <router-outlet name="find"></router-outlet>
+      </div>
     </ion-slide>
     <ion-slide style="background:lightslategrey">
-      <div ><router-outlet name="me"></router-outlet></div>
+      <div>
+        <router-outlet name="me"></router-outlet>
+      </div>
     </ion-slide>
   </ion-slides>
 </ion-content>
-  <ion-tab-bar  slot="bottom" color="light">
-    <ion-tab-button (click)="onClick('message')"  [selected]="buttons[0].color">
-      <ion-label>消息</ion-label>
-      <ion-icon name="happy"></ion-icon>
-      <ion-badge>6</ion-badge>
-    </ion-tab-button>
-    <ion-tab-button  tab="" (click)="onClick('addressbook')"  [selected]="buttons[1].color">
-      <ion-label>通讯录 </ion-label>
-      <ion-icon name="contacts"></ion-icon>
-    </ion-tab-button>
-    <ion-tab-button  tab="" (click)="onClick('find')"  [selected]="buttons[2].color">
-      <ion-label>发现 </ion-label>
-      <ion-icon name="compass"></ion-icon>
-    </ion-tab-button>
-    <ion-tab-button  tab="" (click)="onClick('me')"   [selected]="buttons[3].color">
-      <ion-label>我 </ion-label>
-      <ion-icon name="contact"></ion-icon>
-    </ion-tab-button>
-  </ion-tab-bar>
-
+<ion-tab-bar slot="bottom">
+  <ion-tab-button (click)="onClick('message')"
+                  [selected]="buttons[0].color">
+    <ion-label>消息</ion-label>
+    <ion-icon name="happy"></ion-icon>
+    <ion-badge>6</ion-badge>
+  </ion-tab-button>
+  <ion-tab-button tab=""
+                  (click)="onClick('addressbook')"
+                  [selected]="buttons[1].color">
+    <ion-label>通讯录 </ion-label>
+    <ion-icon name="contacts"></ion-icon>
+  </ion-tab-button>
+  <ion-tab-button tab=""
+                  (click)="onClick('find')"
+                  [selected]="buttons[2].color">
+    <ion-label>发现 </ion-label>
+    <ion-icon name="compass"></ion-icon>
+  </ion-tab-button>
+  <ion-tab-button tab=""
+                  (click)="onClick('me')"
+                  [selected]="buttons[3].color">
+    <ion-label>我 </ion-label>
+    <ion-icon name="contact"></ion-icon>
+  </ion-tab-button>
+</ion-tab-bar>
